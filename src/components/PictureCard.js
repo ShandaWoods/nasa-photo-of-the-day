@@ -1,17 +1,36 @@
 // Example code
-import React from "react";
+import React from 'react';
+import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+
 
 const PictureCard = props => {
     return (
         <div>
-            <h2>{props.title}</h2>
-            <h3>{props.day}</h3>
-            <img src={props.image} alt="Space"/>
-            <p>{props.text}</p>
+          <Card body outline color="primary">
+            <CardImg width="100%" src={props.image} alt="Space" />
+            {/* <CardImgOverlay> */}
+              <CardTitle>{props.title}</CardTitle>
+              <CardText>{props.text}</CardText>
+              <CardText>
+                <small className="text-muted">{props.day}</small>
+              </CardText>
+            {/* </CardImgOverlay> */}
+          </Card>
         </div>
-        
-    )
+      );
 }
+
+// const PictureCard = props => {
+//     return (
+//         <div>
+//             <h2>{props.title}</h2>
+//             <h3>{props.day}</h3>
+//             <img src={props.image} alt="Space"/>
+//             <p>{props.text}</p>
+//         </div>
+        
+//     )
+// }
 export default PictureCard;
 
 // old code
